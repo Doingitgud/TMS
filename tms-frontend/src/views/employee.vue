@@ -1,5 +1,5 @@
 <template>
-    <table class="table">
+ <table class="table">
         <thead class="table-header">
             <tr class="table-row">
                 <th class="table-col">Id</th>
@@ -27,87 +27,55 @@
                 <td>{{ tasks.status }}</td>
                 <td>
                     <button type="button" class="button" @click="edit(tasks)">Edit</button>
-                    <button type="button" class="button" @click="remove(tasks)">Delete</button>
                 </td>
             </tr>
 
         </tbody>
     </table>
 
-  
-        <form @submit.prevent="save" class="formS">
-            <div class="form-head">
-                <div class="form-input">
-                    <label>Vehicle Driver Name</label>
-                    <input type="text" v-model="tasks.name" class="form-control" placeholder="vehicle driver name">
-                </div>
-                <div class="form-input">
-                    <label>Vehicle Number</label>
-                    <input type="text" v-model="tasks.licence_plate_number" class="form-control"
-                        placeholder="Vehicle Number">
-                </div>
-                <div class="form-input">
-                    <label>Pickup Time</label>
-                    <input type="time" v-model="tasks.pickup_date" class="form-control" placeholder="Pickup Time ">
-                </div>
-                <div class="form-input">
-                    <label>Dropoff Time</label>
-                    <input type="time" v-model="tasks.dropoff_date" class="form-control" placeholder="Dropoff time">
-                </div>
-                <div class="form-input">
-                    <label>Customer Name</label>
-                    <input type="text" v-model="tasks.customerName" class="form-control" placeholder="Customer name">
-                </div>
-                <div class="form-input">
-                    <label>Starting Place</label>
-                    <input type="text" v-model="tasks.upPlace" class="form-control"
-                        placeholder="Starting place">
-                </div>
-                <div class="form-input">
-                    <label>Destination</label>
-                    <input type="text" v-model="tasks.dropPlace" class="form-control" placeholder="destination">
-                </div>
-                <div class="form-input">
+    <form @submit.prevent="save" class="formS">
+        <div class="form-input">
                     <label>Status</label>
                     <input type="text" v-model="tasks.status" class="form-control" placeholder="Your ongoing status">
                 </div>
-                <div class="form-input"></div>
+                <div class="form-input">
             </div>
             <button type="submit" class="buttonSave">Save</button>
         </form>
 
-</template>
- 
-<script>
+        
 
+
+</template>
+
+<script>
 import axios from 'axios';
 export default {
-    name: 'Tasks',
+    name: 'employee',
     data() {
         return {
             result: {},
-            tasks: {
+            task: {
                 id: '',
                 name: '',
                 licence_plate_number: '',
                 pickup_date: '',
                 dropoff_date: '',
-                customerName: '',
-                upPlace: '',
-                dropPlace: '',
+                customerName:'',
+                upPlace:'',
+                dropPlace:'',
                 status: ''
 
             }
         }
     },
     created() {
-        this.taskLoad();
+        this. taskLoad();
     },
     mounted() {
-        console.log("mounted() called.......");
 
     },
-    methods: {
+    methods:{
         taskLoad() {
             var page = "http://127.0.0.1:8000/api/task";
             axios.get(page)
@@ -164,19 +132,13 @@ export default {
             this.tasks = tasks;
 
         },
-        remove(tasks) {
-            var url = 'http://127.0.0.1:8000/api/task/delete/' + tasks.id;
-            axios.delete(url);
-            alert("A task data has been deleted");
-            this.taskLoad();
-        }
 
 
-    }//end of method scope
-
+    }
 
 
 }
-</Script>
- 
+</script>
+
+
 <style scoped src="@/assets/styles/taskStyles.css"/>

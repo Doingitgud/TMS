@@ -104,7 +104,7 @@
         },
         updateData() {
             var editrecords = 'http://127.0.0.1:8000/api/vehicle/update/' + this.vehicle.id;
-            axios.put(editrecords, this.tasks)
+            axios.put(editrecords, this.vehicle)
                 .then(
                     ({ data }) => {
                         this.id = '';

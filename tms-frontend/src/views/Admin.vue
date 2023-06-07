@@ -109,7 +109,7 @@ methods:{
      },
      updateData() {
          var editrecords = 'http://127.0.0.1:8000/api/admin/update/' + this.admin.id;
-         axios.put(editrecords, this.tasks)
+         axios.put(editrecords, this.admin)
              .then(
                  ({ data }) => {
                      this.id = '';

@@ -101,7 +101,7 @@ export default {
         },
         updateData() {
             var editrecords = 'http://127.0.0.1:8000/api/vehicleDriver/update/' + this.driver.id;
-            axios.put(editrecords, this.tasks)
+            axios.put(editrecords, this.driver)
                 .then(
                     ({ data }) => {
                         this.id = '';

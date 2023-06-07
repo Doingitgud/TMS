@@ -18,39 +18,19 @@ php artisan make:controller vehicleController
 php artisan make:controller taskController
 php artisan make:controller adminController
 8)create routes in api.php file
-Route::get('/vehicleDriver',[vehicleDriverController::class, 'index']);
-Route::post('/vehicleDriver/save',[vehicleDriverController::class, 'store']);
-Route::put('/vehicleDriver/update/{id}',[vehicleDriverController::class, 'update']);
-Route::delete('/vehicleDriver/delete/{id}',[vehicleDriverController::class, 'destroy']);
-
-//-------------------------------------------------------------------------------------------------
-
-Route::get('/vehicle',[vehicleController::class, 'index']);
-Route::post('/vehicle/save',[vehicleController::class, 'store']);
-Route::put('/vehicle/update/{id}',[vehicleController::class, 'update']);
-Route::delete('/vehicle/delete/{id}',[vehicleController::class, 'destroy']);
-
-//-------------------------------------------------------------------------------------------------
-
-Route::get('/task',[taskController::class, 'index']);
-Route::post('/task/save',[taskController::class, 'store']);
-Route::put('/task/update/{id}',[taskController::class, 'update']);
-Route::delete('/task/delete/{id}',[taskController::class, 'destroy']);
-
-//--------------------------------------------------------------------------------------------------
-
-Route::get('/admin',[adminController::class, 'index']);
-Route::post('/admin/save',[adminController::class, 'store']);
-Route::put('/admin/update/{id}',[adminController::class, 'update']);
-Route::delete('/admin/delete/{id}',[adminController::class, 'destroy']);
-
-
 9)Installed tms-frontend using cmd: vue create tms-front-end
 10)Install vue router using cmd:      vue add router
 11)Install axios using cmd:   npm install axios and vue-axios
 
-
-
+12)Install in laravel project root folder cmd: composer require laravel/passport --with-all-dependencies 
+13)Run cmd: php artisan migrate
+14)Run cmd: php artisan passport:install
+15)Add lines outside class in all files of model folder
+             use Laravel\Passport\HasApiTokens;
+             use Illuminate\Notifications\Notifiable;
+16)Add line: use HasFactory, HasApiTokens, Notifiable; within class of files inside model folder
+17)In AuthServiceProvider.php file, add within boot method: Passport::loadKeysFrom(__DIR__.'/../secrets/oauth');
+18) to see all the laravel routes in your program use cmd:   php artisan route:list
 
 
 

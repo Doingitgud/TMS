@@ -6,6 +6,8 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\vehicleDriverController;
 use App\Http\Controllers\vehicleController;
 use App\Http\Controllers\taskController;
+use App\Http\Controllers\homeController;
+use App\Http\Controllers\loginController;
 
 Route::get('/vehicleDriver',[vehicleDriverController::class, 'index']);
 Route::post('/vehicleDriver/save',[vehicleDriverController::class, 'store']);
@@ -32,6 +34,14 @@ Route::get('/admin',[adminController::class, 'index']);
 Route::post('/admin/save',[adminController::class, 'store']);
 Route::put('/admin/update/{id}',[adminController::class, 'update']);
 Route::delete('/admin/delete/{id}',[adminController::class, 'destroy']);
+
+//--------------------------------------------------------------------------------------------------
+Route::get('/employee',[employeeController::class, 'index']);
+Route::put('/employee/update/{id}',[employeeController::class, 'update']);
+
+//--------------------------------------------------------------------------------------------------
+Route::get('/home',[homeController::class, 'index']);
+Route::get('/login',[loginController::class, 'index']);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

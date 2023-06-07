@@ -1,7 +1,7 @@
 <template>
    <div class="sidebar">
       <div class="title">
-         Truck Management System
+         Transportation Management System
       </div>
       <div class="menu-items">
          <router-link to="/home" active-class="active"  exact tag="button"  class="side-btn">
