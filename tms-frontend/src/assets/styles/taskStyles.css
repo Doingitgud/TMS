@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table td,
+.table th {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 16px;
+}
+
+.table th {
+    background-color: teal;
+    color: #ffffff;
+}
+
+.button {
+    padding: 0.5em 1em 0.5em;
+    border-radius: 3px;
+    margin: 5px 5px 5px 5px;
+    display: inline-block;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+}
+
+.button:hover,
+.button:focus {
+    opacity: 0.8;
+}
+
+.button:active {
+    -webkit-transform: scale(0.80);
+    -moz-transform: scale(0.80);
+    -ms-transform: scale(0.80);
+    -o-transform: scale(0.80);
+    transform: scale(0.80);
+}
+
+.form {
+    background-color: aliceblue;
+    margin: 0 5%;
+    padding: 30px 60px;
+    border-radius: 20px;
+}
+
+.form-head {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    background-color: grey;
+}
+
+.form-input {
+    padding: 20px 40px;
+    text-align: left;
+    margin: auto;
+}
+
+.form-control {
+    width: 100%;
+    border: none;
+    padding: 10px 25px;
+}
+
+label {
+    display: block;
+    text-align: left;
+}
+
+.buttonSave {
+    padding: 10px 30px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: -40px;
+   background-color: blue;
+}
+

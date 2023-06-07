@@ -1,0 +1,63 @@
+1)Installed tms-backend using cmd:  composer create-project laravel/laravel office-backend
+2)Created database inside phpmyadmin called tms_database
+3)In .env file configure the database change DB_DATABASE=tms_database
+4)Create tables inside Migration folder
+php artisan make:migration create_VehicleDriver_table
+php artisan make:migration create_Vehicle_table
+php artisan make:migration create_Task_table
+php artisan make:migration create_Admin_table
+5)use cmd: php artisan migrate   to send them to tms_database
+6)Create models using
+php artisan make:model vehicleDriver
+php artisan make:model admin
+php artisan make:model vehicle
+php artisan make:model task
+7)create controllers in app>Http>Controllers
+php artisan make:controller vehicleDriverController
+php artisan make:controller vehicleController
+php artisan make:controller taskController
+php artisan make:controller adminController
+8)create routes in api.php file
+Route::get('/vehicleDriver',[vehicleDriverController::class, 'index']);
+Route::post('/vehicleDriver/save',[vehicleDriverController::class, 'store']);
+Route::put('/vehicleDriver/update/{id}',[vehicleDriverController::class, 'update']);
+Route::delete('/vehicleDriver/delete/{id}',[vehicleDriverController::class, 'destroy']);
+
+//-------------------------------------------------------------------------------------------------
+
+Route::get('/vehicle',[vehicleController::class, 'index']);
+Route::post('/vehicle/save',[vehicleController::class, 'store']);
+Route::put('/vehicle/update/{id}',[vehicleController::class, 'update']);
+Route::delete('/vehicle/delete/{id}',[vehicleController::class, 'destroy']);
+
+//-------------------------------------------------------------------------------------------------
+
+Route::get('/task',[taskController::class, 'index']);
+Route::post('/task/save',[taskController::class, 'store']);
+Route::put('/task/update/{id}',[taskController::class, 'update']);
+Route::delete('/task/delete/{id}',[taskController::class, 'destroy']);
+
+//--------------------------------------------------------------------------------------------------
+
+Route::get('/admin',[adminController::class, 'index']);
+Route::post('/admin/save',[adminController::class, 'store']);
+Route::put('/admin/update/{id}',[adminController::class, 'update']);
+Route::delete('/admin/delete/{id}',[adminController::class, 'destroy']);
+
+
+9)Installed tms-frontend using cmd: vue create tms-front-end
+10)Install vue router using cmd:      vue add router
+11)Install axios using cmd:   npm install axios and vue-axios
+
+
+
+
+
+
+
+
+
+
+
+
+

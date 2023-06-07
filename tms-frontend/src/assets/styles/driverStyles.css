@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table td,
+.table th {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 16px;
+}
+
+.table th {
+    background-color: teal;
+    color: #ffffff;
+}
+
+.button {
+    padding: 0.5em 1em 0.5em;
+    border-radius: 3px;
+    margin: 5px 5px 5px 5px;
+    display: inline-block;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+}
+
+.button:hover,
+.button:focus {
+    opacity: 0.8;
+}
+
+.button:active {
+    -webkit-transform: scale(0.80);
+    -moz-transform: scale(0.80);
+    -ms-transform: scale(0.80);
+    -o-transform: scale(0.80);
+    transform: scale(0.80);
+}
+.buttonSave{
+    position: absolute;
+    justify-content: center;
+    bottom: 10em;
+    right: 47em;
+    padding: 0.75em 1.25em;
+    font-weight: 400;
+}
+
+
+input {
+    display: block;
+    padding: .55em 3em;
+    margin: 3px 3px;
+    font-size: 16px;
+    background-color: white;
+    display: inline;
+   
+}
+.lc{
+    display: block;
+}
